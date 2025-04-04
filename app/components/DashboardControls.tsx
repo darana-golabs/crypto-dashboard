@@ -1,4 +1,4 @@
-import { useSearchParams } from "@remix-run/react";
+import { useSearchParams, Form } from "@remix-run/react";
 
 interface DashboardControlsProps {
   autoRefreshInterval: number;
@@ -21,7 +21,7 @@ export default function DashboardControls({
   return (
     <div className="flex flex-col sm:flex-row gap-4 mb-8">
       <div className="flex-1">
-        <form method="get" action="/dashboard" className="flex gap-2">
+        <Form method="get" className="flex gap-2">
           <input
             type="search"
             name="q"
@@ -35,11 +35,11 @@ export default function DashboardControls({
           >
             Search
           </button>
-        </form>
+        </Form>
       </div>
 
       <div className="flex gap-2">
-        <form method="get" action="/dashboard">
+        <Form method="get">
           {searchQuery && <input type="hidden" name="q" value={searchQuery} />}
           <button
             type="submit"
@@ -47,9 +47,9 @@ export default function DashboardControls({
           >
             Refresh
           </button>
-        </form>
+        </Form>
 
-        <form method="get" action="/dashboard" className="relative">
+        <Form method="get" className="relative">
           {searchQuery && <input type="hidden" name="q" value={searchQuery} />}
           <select
             name="refresh"
@@ -68,7 +68,7 @@ export default function DashboardControls({
               </option>
             ))}
           </select>
-        </form>
+        </Form>
       </div>
     </div>
   );
