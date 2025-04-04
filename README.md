@@ -36,7 +36,6 @@ yarn install
 ```env
 COINGECKO_API_KEY=your_api_key_here
 COINGECKO_API_URL=https://api.coingecko.com/api/v3
-SESSION_SECRET=your_session_secret_here
 ```
 
 You can get a CoinGecko API key by registering at [CoinGecko](https://www.coingecko.com/api/pricing).
